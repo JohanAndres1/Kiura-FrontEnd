@@ -28,7 +28,6 @@ export function Navbar() {
       </div>
       <div className="flex">
         <Button href={'/'} text={'Home'}/>
-        <Button href={'/jobs'} text={'Jobs'}/>
         <Button href={'/profesionals'} text={'Profesionals'}/>
        </div>
       <div className="flex gap-x-2 h-11">

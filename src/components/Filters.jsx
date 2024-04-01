@@ -1,27 +1,28 @@
 import { useState, useEffect } from 'react';
 
 export default function Filters() {
-  const [profesionals, setProfesionals] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState([]);
 
-  useEffect
+  useEffect(() => {
+    fetch('https://6602f0839d7276a75554a537.mockapi.io/api/v1/jobs')
+      .then((response) => response.json())
+      .then((data) => {
+        setFilter(data);
+      });
+  }, []);
 
   return (
-    <aside className="">
-      <div>
-        <label htmlFor="">Precio a partir de:</label>
-        <input type="range" id="" min="0" max="1000" onChange="" value="" />
-        <span>$</span>
-      </div>
-
-      <div>
-        <label htmlFor={''}>Categoría</label>
-        <select id={''} onChange={''}>
-          <option value="all">Todas</option>
-          <option value="laptops">Portátiles</option>
-          <option value="smartphones">Celulares</option>
+    <div>
+      <h2>Filtrar profesionales</h2>
+      <form>
+        <label htmlFor="filter">Trabajo:</label>
+        <select name="filter" id="filter">
+          <option value="all">All</option>
+          {filter.map(({ id, job }) => (
+            <option key={id}>{job}</option>
+          ))}
         </select>
-      </div>
-    </aside>
+      </form>
+    </div>
   );
 }

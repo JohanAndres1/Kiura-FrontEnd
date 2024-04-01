@@ -33,7 +33,7 @@ export default function Cards() {
             </div>
             <p>{email}</p>
             <p>{tel}</p>
-            <p>{price}</p>
+            <p>${price}</p>
           </li>
         );
       })}
