@@ -1,0 +1,125 @@
+---
+import Button from '../../components/Button.astro';
+import Section from '../../components/Section.astro';
+import EmailIcon from '../../icons/EmailIcon.astro';
+import GithubIcon from '../../icons/GithubIcon.astro';
+import LinkedinIcon from '../../icons/LinkedinIcon.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const data = await fetch('https://6602f0839d7276a75554a537.mockapi.io/api/v1/profesionals').then(response => response.json());
+
+  return data.map(({ createdAt, name, avatar, age, dni, tel, certificate, price, email, password, job, id }) => {
+    return {
+      params: { id: id },
+      props: { createdAt, name, avatar, age, dni, tel, certificate, price, email, password, job, id},
+    };
+  });
+}
+
+const { createdAt, name, avatar, age, dni, tel, certificate, price, email, password, job, id } = Astro.props;
+---
+
+<Layout title=`Talent ${name}` className="grid grid-cols-[17.5rem_auto] gap-4">
+  <Section transition:name=`box ${id} section` class="text-center">
+    <header class="overflow-hidden rounded-xl m-1 max-w-64">
+      <img src={avatar} alt={id} class="w-full fill-transparent" transition:name=`box ${id} img`>
+    </header>
+    <h2 class="text-2xl font-bold text-center">{name}</h2>
+    <div class="w-6 h-1 rounded-full bg-secondary mx-auto mb-2"></div>
+    <p class="mb-2 text-neutral-400 text-lg text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="flex justify-center gap-3 mb-0">
+      <Button>
+        <EmailIcon className="size-6" />
+      </Button>
+      <Button>
+        <GithubIcon className="size-6" />
+      </Button>
+      <Button>
+        <LinkedinIcon className="size-6" />
+      </Button>
+    </div>
+  </Section>
+  <Section>
+    <h3 class="w-max mx-auto text-4xl text-transparent font-bold bg-gradient-to-l from-primary to-secondary [background-clip:text]">About Me</h3>
+    <h2 class="text-2xl text-secondary/70 font-semibold">{job}</h2>
+    <p class="mb-2 text-neutral-400 text-lg text-balance">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam inventore dicta, ducimus velit est minus corrupti? Nostrum possimus, minus maxime culpa ipsa numquam voluptatum perspiciatis tenetur sit beatae eveniet laborum!</p> 
+    <div class="flex ">
+      <div class="">
+        <p>Age: {age}</p>
+        <p>DNI: {dni}</p>
+        <p>Phone Number: {tel}</p>
+        <p class="rounded-2xl">Certificate:</p>
+        <img src={certificate} alt={name} class="w-80 rounded-xl m-2">
+      </div>
+      <ul class="">
+        <li>Skills</li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+        <li class="relative pl-3 ">
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
+          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
+          <p class="uppercase">Lorem</p>
+        </li>
+      </ul>
+    </div>
+  </Section>
+</Layout>

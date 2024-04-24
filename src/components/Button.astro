@@ -1,0 +1,9 @@
+---
+const { className } = Astro.props
+---
+
+<button
+  class=`transition-all p-2 rounded-lg active:scale-90 bg-secondary/20 text-secondary hover:bg-secondary/35 ${className}`
+>
+  <slot />
+</button>

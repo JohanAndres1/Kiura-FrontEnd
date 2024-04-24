@@ -1,0 +1,35 @@
+---
+import Link from './Link.astro';
+import LogoIcon from '../icons/LogoIcon.astro';
+import BuscarIcon from '../icons/BuscarIcon.astro';
+---
+
+<nav class="flex justify-between items-center px-4 h-[4.5rem]">
+  <div class="px-5 flex items-center gap-2 text-secondary font-bold text-xl">
+    <LogoIcon className="size-8" />
+    <a href="/">LookingTalent</a>
+  </div>
+  <div class="flex h-11">
+    <Link href="/" text="Home" />
+    <Link href="/profesionals" text="Profesionals" />
+  </div>
+  <div class="flex gap-x-2 h-11">
+    <div
+      class="flex items-center text-black/70 bg-gray-200/80 h-full rounded-xl"
+    >
+      <BuscarIcon className="absolute size-6 ml-2" />
+      <input
+        class="transition-all pl-10 text-sm bg-transparent outline-0 h-full w-40 active:w-60 focus:w-60 text-black/70"
+        placeholder="Search"
+      />
+    </div>
+    <div class="h-full flex">
+      <Link
+        href="/sing-up"
+        text="Sign Up"
+        className="hover:[color:_rgb(76_198_113)] hover:[background-color:_rgb(76_198_113_/_0.2)]"
+      />
+      <Link href="/log-in" text="Log In" />
+    </div>
+  </div>
+</nav>
