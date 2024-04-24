@@ -5,19 +5,20 @@ import EmailIcon from '../../icons/EmailIcon.astro';
 import GithubIcon from '../../icons/GithubIcon.astro';
 import LinkedinIcon from '../../icons/LinkedinIcon.astro';
 import Layout from '../../layouts/Layout.astro';
+import Skills from '../../components/Skills.astro';
 
 export async function getStaticPaths() {
   const data = await fetch('https://6602f0839d7276a75554a537.mockapi.io/api/v1/profesionals').then(response => response.json());
 
-  return data.map(({ createdAt, name, avatar, age, dni, tel, certificate, price, email, password, job, id }) => {
+  return data.map(({ name, avatar, age, dni, tel, certificate, price, email, job, id }) => {
     return {
       params: { id: id },
-      props: { createdAt, name, avatar, age, dni, tel, certificate, price, email, password, job, id},
+      props: { name, avatar, age, dni, tel, certificate, price, email, job, id},
     };
   });
 }
 
-const { createdAt, name, avatar, age, dni, tel, certificate, price, email, password, job, id } = Astro.props;
+const { name, avatar, age, dni, tel, certificate, price, email, job, id } = Astro.props;
 ---
 
 <Layout title=`Talent ${name}` className="grid grid-cols-[17.5rem_auto] gap-4">
@@ -42,84 +43,28 @@ const { createdAt, name, avatar, age, dni, tel, certificate, price, email, passw
   </Section>
   <Section>
     <h3 class="w-max mx-auto text-4xl text-transparent font-bold bg-gradient-to-l from-primary to-secondary [background-clip:text]">About Me</h3>
-    <h2 class="text-2xl text-secondary/70 font-semibold">{job}</h2>
-    <p class="mb-2 text-neutral-400 text-lg text-balance">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam inventore dicta, ducimus velit est minus corrupti? Nostrum possimus, minus maxime culpa ipsa numquam voluptatum perspiciatis tenetur sit beatae eveniet laborum!</p> 
-    <div class="flex ">
-      <div class="">
-        <p>Age: {age}</p>
-        <p>DNI: {dni}</p>
-        <p>Phone Number: {tel}</p>
-        <p class="rounded-2xl">Certificate:</p>
-        <img src={certificate} alt={name} class="w-80 rounded-xl m-2">
+    <h2 class="text-2xl text-secondary font-semibold ml-4">{job}</h2>
+    <p class="mb-2 text-neutral-600/95 text-lg text-balance">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nobis doloremque quisquam rem saepe repellendus voluptatem aspernatur, eius dolores. Soluta quae voluptatibus sunt vel odit, labore voluptatem aliquid omnis repellendus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab repellat a nam magni voluptate?</p> 
+    <div class="flex justify-around">
+      <div class="w-80">
+        <p class="text-tertiary/90 font-medium"><b class="text-secondary/75">Age:</b> {age}</p>
+        <p class="text-tertiary/90 font-medium"><b class="text-secondary/75">DNI:</b> {dni}</p>
+        <p class="text-tertiary/90 font-medium"><b class="text-secondary/75">Phone Number:</b> {tel}</p>
+        <p class="font-bold text-secondary/75">Certificate:</p>
+        <img src={certificate} alt={name} class="w-full rounded-xl m-2">
       </div>
-      <ul class="">
-        <li>Skills</li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-        <li class="relative pl-3 ">
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 top-1.5 rotate-45" />
-          <div class="w-2 h-0.5 bg-secondary rounded-full absolute left-0 bottom-2.5 -rotate-45" />
-          <p class="uppercase">Lorem</p>
-        </li>
-      </ul>
+      <div class="w-80">
+        <p class="text-tertiary/90 font-medium"><b class="text-primary/75">Price:</b> {price}$</p>
+        <p class="text-tertiary/90 font-medium"><b class="text-primary/75">Email:</b> {email}$</p>
+        <h3 class="text-primary text-xl font-bold text-center mt-4">Skills</h3>
+        <ul>
+          <Skills />
+          <Skills />
+          <Skills />
+          <Skills />
+          <Skills />
+        </ul>
+      </div>
     </div>
   </Section>
 </Layout>
