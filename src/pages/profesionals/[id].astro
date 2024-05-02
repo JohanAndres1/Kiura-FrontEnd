@@ -43,8 +43,8 @@ const { name, avatar, age, dni, tel, certificate, price, email, job, id } = Astr
   </Section>
   <Section>
     <h3 class="w-max mx-auto text-4xl text-transparent font-bold bg-gradient-to-l from-primary to-secondary [background-clip:text]">About Me</h3>
-    <h2 class="text-2xl text-secondary font-semibold ml-4">{job}</h2>
-    <p class="mb-2 text-neutral-600/95 text-lg text-balance">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nobis doloremque quisquam rem saepe repellendus voluptatem aspernatur, eius dolores. Soluta quae voluptatibus sunt vel odit, labore voluptatem aliquid omnis repellendus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab repellat a nam magni voluptate?</p> 
+    <h2 class="text-2xl text-secondary font-semibold ml-5">{job}</h2>
+    <p class="mb-2 text-neutral-600/95 text-lg ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nobis doloremque quisquam rem saepe repellendus voluptatem aspernatur, eius dolores. Soluta quae voluptatibus sunt vel odit, labore voluptatem aliquid omnis repellendus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab repellat a nam magni voluptate?</p> 
     <div class="flex justify-around">
       <div class="w-80">
         <p class="text-tertiary/90 font-medium"><b class="text-secondary/75">Age:</b> {age}</p>
@@ -54,8 +54,8 @@ const { name, avatar, age, dni, tel, certificate, price, email, job, id } = Astr
         <img src={certificate} alt={name} class="w-full rounded-xl m-2">
       </div>
       <div class="w-80">
-        <p class="text-tertiary/90 font-medium"><b class="text-primary/75">Price:</b> {price}$</p>
-        <p class="text-tertiary/90 font-medium"><b class="text-primary/75">Email:</b> {email}$</p>
+        <p class="text-tertiary/90 font-medium"><b class="text-primary/75">Price:</b> ${price}</p>
+        <p class="text-tertiary/90 font-medium"><b class="text-primary/75">Email:</b> {email}</p>
         <h3 class="text-primary text-xl font-bold text-center mt-4">Skills</h3>
         <ul>
           <Skills />
