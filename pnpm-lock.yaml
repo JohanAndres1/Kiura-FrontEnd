@@ -17,9 +17,6 @@ dependencies:
   tailwindcss:
     specifier: ^3.4.3
     version: 3.4.3
-  typescript:
-    specifier: ^5.4.5
-    version: 5.4.5
 
 packages:
 
