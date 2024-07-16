@@ -1,9 +1,73 @@
 ---
+import Button from '../components/Button.astro';
+import Section from '../components/Section.astro';
 import Layout from '../layouts/Layout.astro';
+import EmailIcon from '../icons/EmailIcon.astro';
+import GithubIcon from '../icons/GithubIcon.astro';
+import LinkedinIcon from '../icons/LinkedinIcon.astro';
 ---
 
 <Layout
   title="Looking for Talent"
   className="grid grid-cols-[18rem_auto] gap-4 relative"
 >
+  <Section>
+    <header class="overflow-hidden rounded-xl m-1 max-w-64">
+      <img src="../../src/img/Mi-foto.webp" alt="Foto de Johan Sierra" class="w-full fill-transparent" />
+    </header>
+    <h2 class="text-2xl font-bold text-center">Johan Sierra</h2>
+    <div class="w-6 h-1 rounded-full bg-secondary mx-auto mb-2"></div>
+    <p class="mb-2 text-neutral-400 text-lg text-center">
+      Soy un Desarrollador Web, me gusta mucho la parte visual y la experiencia
+      del usuario, hago lo mejor para hacer un gran trabajo.
+    </p>
+    <div class="flex justify-center gap-3 mb-0">
+      <a
+        href="mailto:johansierra553@gmail.com"
+        class="transition-all p-2 rounded-lg active:scale-90 bg-secondary/20 text-secondary hover:bg-secondary/35"
+      >
+        <EmailIcon className="size-6" />
+      </a>
+      <a
+        href="https://github.com/JohanAndres1" target="_blank"
+        class="transition-all p-2 rounded-lg active:scale-90 bg-secondary/20 text-secondary hover:bg-secondary/35"
+      >
+        <GithubIcon className="size-6" />
+      </a>
+      <a
+        href="http://linkedin.com/in/johanandressierracorredor" target="_blank"
+        class="transition-all p-2 rounded-lg active:scale-90 bg-secondary/20 text-secondary hover:bg-secondary/35"
+      >
+        <LinkedinIcon className="size-6" />
+      </a>
+    </div>
+  </Section>
+  <Section>
+    <h1
+      class="my-5 w-max mx-auto text-4xl text-transparent font-bold bg-gradient-to-l from-primary to-secondary [background-clip:text]"
+    >
+      ¡Bienvenido a Looking for Talent!
+    </h1>
+    <article class="my-9">
+      <p class="mx-5 text-lg mb-2 text-neutral-700/95">
+        Looking for Talent es un proyecto que hice con base en una prueba
+        técnica de Front-End, esta es una página web donde se presentan perfiles
+        de talentos (aspirantes) de distintas áreas profesionales, donde las
+        empresas o empleadores pueden buscar profesionales que se adapten al
+        perfil que están buscando al cargo que necesitan.
+      </p>
+      <p class="mx-5 text-lg mb-2 text-neutral-700/95">
+        Se está consumiendo una API de perfiles profesionales, se muestran todos
+        los perfiles en un formato de cartas, en estas se muestra una
+        información básica del talento, cada talento tiene su 'perfil' donde sé
+        muestra un poco más sobre ellos.
+      </p>
+      <p class="mx-5 text-lg mb-2 text-neutral-700/95">
+        Cabe recalcar que la información que se muestra es de la API que se está
+        consumiendo, gracias por la atención prestada, si tienes alguna opinión
+        o idea de como puedo mejorar este proyecto la acepto con mucho gusto, en
+        la tarjeta izquierda se encuentra las formas en que me puedes contactar.
+      </p>
+    </article>
+  </Section>
 </Layout>
