@@ -21,10 +21,10 @@ export async function getStaticPaths() {
 const { name, avatar, age, dni, tel, certificate, price, email, job, id } = Astro.props;
 ---
 
-<Layout title=`Talent ${name}` className="grid grid-cols-[17.5rem_auto] gap-4">
-  <Section transition:name=`box ${id} section` class="text-center">
-    <header class="overflow-hidden rounded-xl m-1 max-w-64">
-      <img src={avatar} alt={id} class="w-full fill-transparent" transition:name=`box ${id} img`>
+<Layout title=`Talent ${name}` className="grid grid-cols-[18rem_auto] gap-4">
+  <Section transition:name=`box ${id} section`>
+    <header class="overflow-hidden rounded-xl m-1 w-64 h-64">
+      <img src={avatar} alt={id} class="w-full h-full bg-slate-300" transition:name=`box ${id} img`>
     </header>
     <h2 class="text-2xl font-bold text-center">{name}</h2>
     <div class="w-6 h-1 rounded-full bg-secondary mx-auto mb-2"></div>
@@ -51,7 +51,7 @@ const { name, avatar, age, dni, tel, certificate, price, email, job, id } = Astr
         <p class="text-tertiary/90 font-medium"><b class="text-secondary/75">DNI:</b> {dni}</p>
         <p class="text-tertiary/90 font-medium"><b class="text-secondary/75">Phone Number:</b> {tel}</p>
         <p class="font-bold text-secondary/75">Certificate:</p>
-        <img src={certificate} alt={name} class="w-full rounded-xl m-2">
+        <img src={certificate} alt={name} class="w-full h-60 rounded-xl m-2 bg-slate-300">
       </div>
       <div class="w-80">
         <p class="text-tertiary/90 font-medium"><b class="text-primary/75">Price:</b> ${price}</p>
